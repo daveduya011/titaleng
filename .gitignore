@@ -6,7 +6,7 @@
 /web/modules/contrib/
 
 /web/themes/contrib/*
-!/web/themes/contrib/leng
+!/web/themes/contrib/leng/
 !/web/themes/contrib/leng/*
 
 /web/profiles/contrib/
