@@ -3,11 +3,11 @@
 /drush/contrib/
 /vendor/
 /web/core/
-/web/modules/contrib/
+# /web/modules/contrib/
 
-/web/themes/contrib/*
-!/web/themes/contrib/leng/
-!/web/themes/contrib/leng/*
+/web/themes/contrib/belgrade
+/web/themes/contrib/bootstrap
+/web/themes/contrib/commerce_bootstrap
 
 /web/profiles/contrib/
 
