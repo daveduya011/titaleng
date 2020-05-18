@@ -1,0 +1,18 @@
+//
+// Frontpage
+// --------------------------------------------------
+.path-frontpage{
+  .region-header{
+    background-color: $brand-primary-300;
+  }
+  .menu-catalog{
+    color: #fff;
+    .dropdown-toggle,
+    > .menu__item > .menu__link {
+      color: inherit;
+    }
+  }
+  .footer{
+    margin-top: 0;
+  }
+}

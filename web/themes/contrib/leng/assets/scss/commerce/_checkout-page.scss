@@ -1,0 +1,25 @@
+.commerce-checkout-flow {
+
+    #edit-shipping-information-shipping-profile {
+        .address-book-edit-button{
+            margin: 10px 0;
+        }
+    }
+    #edit-shipping-information-recalculate-shipping {
+        display: none;
+    }
+
+    .layout-region-checkout-secondary {
+        .order-total-line-label {
+            margin-right: 10px;
+        }
+    }
+
+    
+    .mobile-number-field {
+    padding: 20px 0;
+        .form-type-select {
+            width: 100px;
+        }
+    }
+}

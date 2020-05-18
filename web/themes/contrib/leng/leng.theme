@@ -1,0 +1,190 @@
+<?php
+
+/**
+ * @file
+ * Leng theme for Drupal Commerce.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+use Drupal\file\Entity\File;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function leng_theme_suggestions_field_alter(&$suggestions, $variables) {
+  $element = $variables['element'];
+  // Field template suggestions based on view mode.
+  $suggestions[] = 'field__' . $element['#entity_type'] . '__' . $element['#field_name'] . '__' . $element['#view_mode'];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function leng_theme_suggestions_form_alter(&$suggestions, $variables) {
+  $form_id = $variables['element']['#form_id'];
+  if (in_array($form_id, ['user_login_form','user_register_form','user_pass']))  {
+    $suggestions[] = 'form__' . $form_id;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for form element templates.
+ */
+function leng_preprocess_form_element(&$variables) {
+  $element = &$variables['element'];
+  // This function is invoked as theme wrapper, but the rendered form element may
+  // not necessarily have been processed by \Drupal::formBuilder()->doBuildForm().
+  $element += [
+    '#title_display' => 'before',
+    '#wrapper_attributes' => [],
+    '#label_attributes' => [],
+  ];
+  $variables['attributes'] = $element['#wrapper_attributes'];
+
+  // Add label_display and label variables to template.
+  $variables['label_display'] = $element['#title_display'];
+  $variables['label'] = ['#theme' => 'form_element_label'];
+  $variables['label'] += array_intersect_key($element, array_flip(['#id', '#required', '#title', '#title_display']));
+  $variables['label']['#attributes'] = $element['#label_attributes'];
+
+  $variables['children'] = $element['#children'];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function leng_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Display the "Forgot your password?" link under the password input.
+  $pass_link = Link::fromTextAndUrl(t('Forgot your password?'), Url::fromUri('route:user.pass', ['attributes' => ['class' => ['pass-link']]]))->toString();
+  $form['pass']['#suffix'] = $pass_link;
+}
+
+function leng_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  // If you want you can add a template suggestion for all views
+  // based on their ID:
+  $suggestions[] = sprintf('views_view_unformatted__%s', $variables['view']->id());
+
+  // Or you can check the ID, add suggestions, do whatever you want
+  // ...
+}
+
+
+// function leng_preprocess(&$variables, $hook) {
+//   var_dump($hook);
+// }
+
+// function leng_preprocess_menu__catalog(&$variables){
+//   foreach($variables['items'] as &$item) {
+//     // $item['title'] = $item['title'] . 'ie';
+//     kint($item);
+//   }
+// }
+
+
+function leng_preprocess_commerce_cart_flyout_block_icon(&$variables) {
+  $icon = theme_get_setting('icon_cart');
+  $fid = reset($icon);
+  // Load the file.
+  if ($fid == null) {
+    global $base_url;
+    $theme = \Drupal::theme()->getActiveTheme();
+    $variables['icon'] = $base_url.'/' . $theme->getPath() . '/assets/icons/cart.svg';
+    return;
+  }
+  $file = File::load($fid);
+  $variables['icon'] = $file->url();
+}
+
+function leng_preprocess_views_view_unformatted__featured_banner(&$variables) {
+  $icon = theme_get_setting('icon_arrow');
+  $fid = reset($icon);
+  if ($fid == null) {
+    global $base_url;
+    $theme = \Drupal::theme()->getActiveTheme();
+    $variables['icon_arrow'] = $base_url.'/' . $theme->getPath() . '/assets/icons/arrows.svg';
+    return;
+  }
+  // Load the file.
+  $file = File::load($fid);
+  $variables['icon_arrow'] = $file->url();
+}
+
+
+function leng_form_views_exposed_form_alter(&$form, &$form_state, $form_id){
+  if (isset($form['search_api_fulltext'])) {
+    $form['search_api_fulltext']['#attributes'] = array('placeholder' => array(t('Search for product')));
+  }
+  if ($form['#id'] == "views-exposed-form-product-catalog-page-2") {
+    global $base_url;
+
+    $icon = theme_get_setting('icon_search');
+    $fid = reset($icon);
+    $theme = \Drupal::theme()->getActiveTheme();
+    $url = $base_url.'/' . $theme->getPath() . '/assets/icons/search.svg';
+    if ($fid > 0) {
+      // Load the file.
+      $file = File::load($fid);
+      $url = $file->url();
+    }
+    $form['actions']['submit']['#type'] = 'submit';
+    $form['actions']['submit']['#value'] = null;
+    $form['actions']['submit']['#name'] = 'search';
+    $form['actions']['submit']['#attributes'] = array('style' 
+    => array(sprintf(
+      'background:url(%s) no-repeat;
+      background-size:contain', $url)));
+  }
+}
+
+
+function leng_form_system_theme_settings_alter(&$form, $form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+  $settings_theme = 'leng';
+  
+  createFormIcon('icon_cart', 'Cart Icon', $settings_theme, $form);
+  createFormIcon('icon_arrow', 'Arrow Icon', $settings_theme, $form);
+  createFormIcon('icon_search', 'Search Icon', $settings_theme, $form);
+}
+
+function _fix_permanent_image($image, $theme) {
+  $icon = theme_get_setting($image, $theme);
+  $fid = reset($icon);
+  if ($fid > 0) {
+    $file = File::load($fid);
+    if (is_object($file) && $file->get('status')->value == 0) {
+      $file->get('status')->value = FILE_STATUS_PERMANENT;
+      $file->setPermanent();
+      $file->save();
+      $file_usage = \Drupal::service('file.usage'); 
+      $file_usage->add($file, $theme, 'theme', 1);
+      drupal_set_message($image . ' saved permanently.', 'status');
+    }
+  }
+}
+
+function createFormIcon($icon_name, $title, $theme, &$form) {
+  $folder = file_prepare_directory($default_file_dir, FILE_CREATE_DIRECTORY);
+  $default_file_dir = 'public://icons';
+
+  
+    $icon = theme_get_setting($icon_name);
+    // BUG: Force file to be permanent.
+    if (!empty($icon)) {
+      _fix_permanent_image($icon_name, $theme);
+    }
+
+    $form[$icon_name] = array(
+      '#type'          => 'managed_file',
+      '#title'         => $title,
+      '#upload_location' => $default_file_dir,
+      '#default_value' => theme_get_setting($icon_name),
+      '#upload_validators' => array(
+        'file_validate_extensions' => array('png gif jpg jpeg svg'),
+      ),
+    );
+}

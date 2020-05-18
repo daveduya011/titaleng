@@ -1,0 +1,9 @@
+{
+  "name": "drupal/leng",
+  "type": "drupal-theme",
+  "description": "Default theme for Leng Shop",
+  "license": "GPL-2.0",
+  "require": {
+    "drupal/commerce_bootstrap": "^1.0"
+  }
+}
