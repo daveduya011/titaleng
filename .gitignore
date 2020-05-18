@@ -8,7 +8,6 @@
 /web/themes/contrib/belgrade/
 /web/themes/contrib/bootstrap/
 /web/themes/contrib/commerce_bootstrap/
-!/web/themes/contrib/leng/
 /web/profiles/contrib/
 
 # Ignore sensitive information
