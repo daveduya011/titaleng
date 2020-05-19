@@ -17,7 +17,6 @@
 
 
   .commerce-product--catalog__image {
-    height: 210px;
     overflow-y: hidden;
     border-radius: 10px;
     @media screen and (max-width: $screen-lg) {
@@ -28,6 +27,7 @@
       margin: auto;
     }
   }
+
 
   &:hover {
     background: var(--primaryColor);

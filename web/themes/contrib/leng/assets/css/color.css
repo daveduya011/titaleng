@@ -22,7 +22,7 @@
   
   /* Inverted text color fix */
   .path-frontpage .region-header .menu-catalog>.menu__item>.menu__link {
-    color: var(--dark);
+    color: var(--textColor);
   }
   
   /* Dark */
