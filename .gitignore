@@ -6,6 +6,7 @@
 /web/modules/contrib/
 !/web/modules/contrib/leng_custom/
 !/web/modules/contrib/leng_custom/*
+!/web/modules/contrib/leng_custom/*/*/*
 
 /web/themes/contrib/belgrade/
 /web/themes/contrib/bootstrap/
