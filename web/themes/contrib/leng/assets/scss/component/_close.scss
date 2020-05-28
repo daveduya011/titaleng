@@ -1,11 +1,14 @@
 .close-btn {
-  position: relative;
+  
+  padding: 20px;
+  position: absolute;
+  right: 20px;
+  top: 60px;
   z-index: 3;
-  float: right;
   margin: 20px 0;
   border: 0;
   background: transparent;
-  color: white;
+  color: var(--textColor);
   font-size: 13px;
 
   @extend .glyph;

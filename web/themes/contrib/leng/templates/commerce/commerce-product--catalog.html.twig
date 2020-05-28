@@ -19,6 +19,7 @@
  * @ingroup themeable
  */
 #}
+
 {%
   set classes = [
   'commerce-product',
@@ -26,15 +27,13 @@
   'commerce-product--catalog'
 ]
 %}
-{# {{kint(product)}} #}
 
 <article{{ attributes.addClass(classes) }}>
   <div class="commerce-product--catalog__image">
-    {{- product.field_images -}}
-    {{- product.variation_field_images[0] -}}
+    {{- product.field_display_image -}}
     <a href="{{ product_url }}" class="commerce-product--catalog__hover-text"><i class="glyph glyph-look"></i>{{ 'View product'|t }}</a>
   </div>
   <div class="commerce-product--catalog__info">
-    {{- product|without('variation_attributes', 'field_images', 'variation_field_images') -}}
+    {{- product|without('variation_attributes', 'field_images', 'variation_field_images', 'field_display_image') -}}
   </div>
 </article>

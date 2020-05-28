@@ -58,6 +58,7 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 {# Navbar #}
+
 {% if page.navigation or page.top_navigation %}
   {% block navbar %}
     {%
@@ -134,7 +135,7 @@
         {# Sidebar First #}
         {% if page.sidebar_first %}
           {% block sidebar_first %}
-            <aside class="col-sm-3" role="complementary">
+            <aside class="col-md-3" role="complementary">
               {{ page.sidebar_first }}
             </aside>
           {% endblock %}
@@ -143,9 +144,9 @@
         {# Content #}
         {%
         set content_classes = [
-        page.sidebar_first and page.sidebar_second ? 'col-sm-6',
-        page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
-        page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9'
+        page.sidebar_first and page.sidebar_second ? 'col-md-6',
+        page.sidebar_first and page.sidebar_second is empty ? 'col-md-9',
+        page.sidebar_second and page.sidebar_first is empty ? 'col-md-9'
         ]
         %}
 
@@ -172,6 +173,15 @@
               {{ page.content }}
             </div>
           {% endblock %}
+
+          {# Similar Products #}
+          {% if page.similar %}
+            {% block similar %}
+              <div class="container-fluid">
+                {{ page.similar }}
+              </div>
+            {% endblock %}
+          {% endif %}
         </section>
 
         {# Sidebar Second #}
@@ -193,4 +203,12 @@
       {{ page.footer }}
     </footer>
   {% endblock %}
+{% endif %}
+
+
+{# Navigation (Mobile) #}
+{% if page.mobile_navigation %}
+  <div class="container-fluid container-mobile-navigation">
+  {{ page.mobile_navigation }}
+  </div>
 {% endif %}

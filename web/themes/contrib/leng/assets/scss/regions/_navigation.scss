@@ -16,10 +16,9 @@
     }
     .dropdown-toggle,
     .menu__link{
-      color: white;
+      color: var(--textColor);
       padding: $main-menu-link-padding;
       font-size: $main-menu-font-size;
-      font-weight: 300;
     }
     .dropdown-menu{
       left: 50%;

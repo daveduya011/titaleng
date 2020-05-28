@@ -46,6 +46,7 @@
 @import "component/menu-account";
 @import "component/side-flyout";
 @import "component/facet-block";
+@import "component/fivestar";
 
 // jQuery UI style overrides.
 @import "jquery-ui/autocomplete";
@@ -57,6 +58,7 @@
 
 // Regions
 @import "regions/top-navigation";
+@import "regions/mobile-navigation";
 @import "regions/header";
 @import "regions/navigation";
 @import "regions/footer";

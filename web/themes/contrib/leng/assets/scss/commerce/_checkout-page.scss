@@ -22,4 +22,15 @@
             width: 100px;
         }
     }
+    #edit-sidebar-coupon-redemption-form-apply {
+        @include button-gradient;
+        margin-top: 0px;
+        font-size: 15px;
+        @media screen and (min-width: $screen-md) {
+            float: right;    
+        }
+    }
+    #edit-actions-next {
+        margin-top: 10px;
+    }
 }

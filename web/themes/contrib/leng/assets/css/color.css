@@ -1,10 +1,11 @@
 :root {
-    --bodyBg: #fff;
-    --textColor: #5a3370;
-    --dark: #8d6c9f;
-    --primaryColor: #fadb6f;
-    --primaryLight: #f9e3ae;
-    --primaryLighter: #faefde;
+    --bodyBg: #fdfdfd;
+    --textColor: #1d1d1d;
+    --dark: #d9a71b;
+    --primaryColor: #fed328;
+    --header: #353535;
+    --primaryLight: #ffde59;
+    --primaryLighter: #fff0b6;
   }
   
   /* Background color */
@@ -15,14 +16,18 @@
   /* Text color */
   body,
   .region-header .menu-catalog .dropdown-toggle,
-  .region-header .menu-catalog>.menu__item>.menu__link,
+  .region-header .menu-catalog>.menu__item>.menu__link
+  {
+    color: var(--textColor)
+  }
   .commerce-product--catalog__info .field--name-title a {
-    color: var(--dark)
+    color: var(--textColor);
+    opacity: 0.8;
   }
   
   /* Inverted text color fix */
-  .path-frontpage .region-header .menu-catalog>.menu__item>.menu__link {
-    color: var(--textColor);
+.region-header .menu-catalog>.menu__item>.menu__link {
+    color: var(--primaryColor);
   }
   
   /* Dark */
@@ -35,14 +40,13 @@
     background-color: var(--dark)
   }
   .navbar-default {
-    background-color: var(--primaryLighter); 
+    background-color: var(--primaryColor);
   }
   .navbar-default a {
-    color: var(--dark);
+    color: var(--textColor);
   }
   
   /* Primary */
-  .side-flyout,
   .btn-info,
   .btn-white,
   form.user-pass,
@@ -53,20 +57,34 @@
   .btn-primary, .path-cart [id="edit-checkout"],
   .btn-default:hover, .path-cart :hover[id="edit-submit"],
   .line:after, .form-header:after, .page-header:after,
-  [type="checkbox"]:checked+label:after,
+  .region-header .menu-catalog .dropdown-toggle.is-active:before,
+  .region-header .menu-catalog>.menu__item>.menu__link:hover:before,
+  .region-header .menu-catalog>.menu__item>.menu__link.is-active:before,
+  [type="radio"]:checked+span+label:after, [type="radio"]:checked+label:after {
+    background-color: var(--dark)
+  }
   .well-primary,
   .well-primary .btn-white,
   .well-primary .btn,
   .well-primary .form-wrapper__returning-customer a,
   .form-wrapper__returning-customer .well-primary a,
   .well-primary .cart-block--offcanvas-contents__links a,
-  .cart-block--offcanvas-contents__links .well-primary a .region-header .menu-catalog .dropdown-toggle:hover:before,
-  .region-header .menu-catalog .dropdown-toggle.is-active:before,
-  .region-header .menu-catalog>.menu__item>.menu__link:hover:before,
-  .region-header .menu-catalog>.menu__item>.menu__link.is-active:before,
-  [type="radio"]:checked+span+label:after, [type="radio"]:checked+label:after,
+  .cart-block--offcanvas-contents__links .well-primary a .region-header .menu-catalog .dropdown-toggle:hover:before {
+    background: var(--dark);
+  }
+  
+  .side-flyout {
+    background: var(--primaryColor);
+  }
   .user-login-form+.auth-user-form--footer {
-    background-color: var(--dark)
+    background-color: var(--header);
+  }
+  .user-login-form+.auth-user-form--footer .btn {
+    background-color: transparent;
+    color: var(--primaryLighter);
+  }
+  .user-login-form+.auth-user-form--footer .btn:hover {
+    background-color: var(--dark);
   }
   /* .commerce-product--catalog:hover .commerce-product--catalog__info {
     background-color: var(--dark)
@@ -77,12 +95,11 @@
   .btn-info:hover,
   .btn-white:hover,
   .btn-default, .path-cart [id="edit-submit"],
-  .btn-primary:hover, .path-cart :hover[id="edit-checkout"],
+  .path-cart :hover[id="edit-checkout"],
   .number-btn,
   .breadcrumb>li>a,
   .breadcrumb>.active,
   .breadcrumb>li+li:before,
-  .form-control,
   .select-wrapper:after,
   .panel-title[data-toggle="collapse"]:after,
   .block-facets .block-title:before,
@@ -101,6 +118,12 @@
   .panel-title[data-toggle="collapse"]:after {
     color: var(--dark)
   }
+  .btn-primary:hover {
+    color: var(--primaryLighter);
+  }
+  .form-control {
+    color: var(--textColor);
+  }
   
   .btn-info,
   .btn-info:hover,
@@ -112,11 +135,17 @@
   [type="radio"]:checked+span+label:before, [type="radio"]:checked+span+label:after,
   [type="radio"]:checked+label:before,
   [type="radio"]:checked+label:after,
-  [type="checkbox"]:checked+label:after,
   .commerce-product--full .form-control,
   .product-img--thumb.active,
   .commerce-product--full .attribute-widgets .product--rendered-attribute .form-radio:checked ~ label.option {
     border-color: var(--primaryColor)
+  }
+  [type="checkbox"]:checked+label:after{
+    border-color: var(--textColor);
+    background: var(--primaryLight);
+  }
+  [type="radio"]:checked+label:after {
+    background: var(--primaryLight);
   }
   
   .table>thead>tr>th, .table>thead>tr>td, .table>tbody>tr>th, .table>tbody>tr>td, .table>tfoot>tr>th, .table>tfoot>tr>td{
@@ -152,7 +181,7 @@
   .user-pass+.auth-user-form--footer,
   .user-register-form+.auth-user-form--footer,
   .layout-region-checkout-secondary .checkout-pane-order-summary  {
-    background-color: var(--primaryLighter)
+    background-color: var(--primaryLight)
   }
   
   [type="radio"]:not(:checked)+span+label:before,
@@ -186,8 +215,8 @@
     background-color: var(--primaryLight);
   }
 
-  .path-frontpage .region-header {
-      background-color: var(--primaryColor);
+  .path-frontpage .region-header,.region-header {
+      background-color: var(--header);
   }
 
   
@@ -199,13 +228,15 @@
   [type="radio"]:disabled:checked+label:before,
   [type="radio"]:disabled:checked+span+label:after,
   [type="radio"]:disabled:checked+label:after,
-  [type="checkbox"]:not(:checked)+label:after,
   [type="checkbox"]:disabled:checked+label:after {
     border-color: var(--primaryColor)
   }
+  [type="checkbox"]:not(:checked)+label:after {
+    border-color: var(--textColor)
+  }
   
   .layout-region-checkout-secondary .table>tbody>tr>td {
-    border-bottom-color: var(--primaryLight)
+    border-bottom-color: var(--textColor);
   }  
 
   .commerce-product--catalog__info .field--name-price {
@@ -213,7 +244,8 @@
   }
 
   .region-featured {
-    background-color: var(--primaryLight);
-    color: var(--dark);
+    background: var(--dark);
+    background: radial-gradient(circle, var(--primaryColor) 0%, var(--dark) 100%);
+    color: var(--textColor);
   }
   

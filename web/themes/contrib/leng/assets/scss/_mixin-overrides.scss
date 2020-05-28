@@ -2,7 +2,21 @@
 //
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
-
+@mixin button-gradient {
+  display: block;
+  min-width: 150px;
+  padding: 14px;
+  background: var(--dark);
+  background: linear-gradient(90deg, #3E3B32 30%, var(--dark) 100%);
+  color: var(--primaryLight);
+  font-weight: 800;
+  border-radius: 10px;
+  text-align: center;
+  &:hover {
+    background: var(--dark);
+    color: var(--primaryLighter);
+  }
+}
 @mixin button-variant($color, $background, $border) {
   color: $color;
   background-color: $background;

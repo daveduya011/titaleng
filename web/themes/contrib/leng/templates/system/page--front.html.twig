@@ -26,13 +26,6 @@
         {% endblock %}
       {% endif %}
 
-      {# Search #}
-      {% if page.search %}
-        {% block search %}
-            {{ page.search }}
-        {% endblock %}
-      {% endif %}
-
       {# Highlighted #}
       {% if page.highlighted %}
         {% block highlighted %}
@@ -63,7 +56,9 @@
           {# Content #}
           {% block content %}
             <a id="main-content"></a>
+            <div class="container">
             {{ page.content|without('leng_page_title') }}
+            </div>
           {% endblock %}
         </section>
       </div>

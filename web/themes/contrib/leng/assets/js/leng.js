@@ -42,11 +42,11 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    effect: 'slide',
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
   });
 
   })(jQuery);

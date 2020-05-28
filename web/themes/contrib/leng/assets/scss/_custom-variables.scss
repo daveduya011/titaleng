@@ -137,7 +137,7 @@ $navbar-default-bg:                  #272727;
 $navbar-default-color:               #ffffff;
 $navbar-default-link-color:          $navbar-default-color;
 $navbar-default-link-hover-color:    darken($navbar-default-color, 20%);
-$navbar-default-toggle-icon-bar-bg:  $text-color;
+$navbar-default-toggle-icon-bar-bg:  var(--textColor);
 $navbar-default-toggle-hover-bg:     transparent;
 $navbar-default-toggle-border-color: transparent;
 $navbar-default-border:              transparent;
@@ -156,7 +156,7 @@ $flyout-width-lg:                    calc(((100vw - #{$container-lg} ) / 2) + #{
 $flyout-z-index:                     ($zindex-navbar - 1);
 
 $side-flyout-bg:                     $brand-primary;
-$side-flyout-animation:              .2s linear;
+$side-flyout-animation:              .15s ease-out;
 
 // Main menu
 $main-menu-link-padding:             10px 15px;

@@ -1,11 +1,13 @@
 .region-featured {
     height: 400px;
     position: relative;
-    overflow-y: hidden;
+    overflow: hidden;
+
+    .swiper-container {
+        overflow: initial;
+    }
 }
 .view-featured-banner {
-    margin: 25px 0;
-
     .field-content {
         display: flex;
         justify-content: center;
@@ -16,7 +18,7 @@
     }
 
     .views-row {
-        height: 350px;
+        height: 400px;
         margin: auto;
         display: flex;
         align-items: center;
@@ -61,34 +63,48 @@
 .paragraph--type--feature-with-icon {
     display: flex;
     align-items: center;
-    height: 100px;
-    border: 3px solid;
     border-radius: 10px;
-    background-color: var(--primaryLighter);
-    font-size: 14px;
+    background-color: var(--primaryColor);
+    box-shadow: 0px 0px 50px 0px #2227;
+    font-size: 15px;
     position: relative;
-    flex-direction: row;
-    padding: 10px 20px;
-    margin: 0 40px;
-    max-width: 600px;
-
-    @media screen and (min-width: $screen-lg) {
-        flex-direction: column;
-        height: 330px;
-        margin: 0 30px;
-        padding: 20px 25px;
-        width: 280px;
-        text-align: center;
+    flex-direction: column;
+    height: 330px;
+    padding: 20px 25px;
+    width: 280px;
+    text-align: center;
+    margin: 10px 20px;
+    @media screen and (max-width: $screen-lg) {
+        flex-direction: row;
+        height: 100px;
+        min-width: 600px;
     }
-
+    @media screen and (max-width: $screen-sm) {
+        flex-direction: row;
+        height: 100px;
+        min-width: initial;
+        width: 80%;
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: auto auto;
+        text-align: left;
+        padding: 10px;
+        grid-column-gap: 10px;
+    }
+    
     .field--name-field-title {
         text-transform: uppercase;
         font-weight: 800;
-        font-size: 20px;
+        font-size: 16px;
         margin-top: 10px;
         @media screen and (max-width: $screen-lg) {
             margin: 0;
             font-size: 16px;
+            min-width: 120px;
+        }
+        @media screen and (max-width: $screen-sm) {
+            padding-bottom: 3px;
+            align-self: end;
         }
     }
 
@@ -97,41 +113,61 @@
         img {
             width: 60px;
         }
+        @media screen and (max-width: $screen-sm) {
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
     }
     .field--name-field-body {
         @media screen and (max-width: $screen-sm) {
-            display: none;
+           grid-column-start: 2;
+           margin: 0;
+           align-self: start;
+        }
+        @media screen and (max-width: $screen-lg) {
+            font-size: 12px;
         }
         margin: auto 10px;
     }
     .field--name-field-link {
         text-align: center;
         margin: 10px;
-        @media screen and (max-width: $screen-sm) {
-            display: none;
-        }
         a {
+            @include button-gradient;
             display: block;
-            width: fit-content;
-            min-width: 150px;
-            padding: 14px;
-            background: var(--primaryLight);    
-            color: var(--dark);
-            font-weight: 800;
-            border: 3px solid;
-            border-radius: 10px;
             margin: auto;
+            
+            @media screen and (max-width: $screen-sm) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                background: none;
+                font-size: 0;
 
-            &:hover {
-                background: var(--dark);
-                color: var(--primaryLighter);
+                &:hover {
+                    background: #0008;
+                }
             }
         }
     }
 }
 
 .paragraph--type--full-width-image {
-    position: relative;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+
+    img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
     .field--name-field-link {
         a {
             position: absolute;
@@ -142,4 +178,27 @@
             color: transparent;
         }
     }
+}
+
+.paragraph--type--full-image-width-with-feature {
+    .paragraph--type--feature-with-icon {
+        z-index: 1;
+        margin: auto;
+    }
+    @media screen and (min-width: $screen-lg) {
+        .paragraph--type--feature-with-icon {
+            position: absolute;
+            left: 190px;
+            top: 25px;
+        }
+    }
+    @media screen and (max-width: $screen-lg) {
+        .field--name-field-feature {
+            position: absolute;
+            width: 100%;
+            bottom: 20px;
+            left: 0;
+        }
+    }
+    
 }

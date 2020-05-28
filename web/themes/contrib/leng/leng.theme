@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
 use Drupal\file\Entity\File;
+use Drupal\commerce_product\Entity\ProductInterface;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -74,13 +75,29 @@ function leng_theme_suggestions_views_view_unformatted_alter(array &$suggestions
 // function leng_preprocess(&$variables, $hook) {
 //   var_dump($hook);
 // }
-
+// function leng_form_alter(&$form, FormStateInterface $form_state, $form_id)  {
+//   var_dump($form['#id']);
+// }
 // function leng_preprocess_menu__catalog(&$variables){
 //   foreach($variables['items'] as &$item) {
 //     // $item['title'] = $item['title'] . 'ie';
 //     kint($item);
 //   }
 // }
+
+function leng_preprocess_commerce_product__full(&$variables) {
+  $flag_service = \Drupal::service('flag');
+  $flag = $flag_service->getFlagById('bought');
+  // check if isFlagged
+  $product = $variables['product_entity'];
+  $user = $variables['user'];
+
+  if ($user->isAnonymous()) {
+    return;
+  }
+  $flagged = $flag_service->getFlagging($flag, $product, $user);
+  $variables['hasBought'] = $flagged ? true : false;
+}
 
 
 function leng_preprocess_commerce_cart_flyout_block_icon(&$variables) {

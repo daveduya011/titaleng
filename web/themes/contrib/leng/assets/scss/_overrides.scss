@@ -8,6 +8,15 @@ ol, ul {
     margin-bottom: 0;
   }
 }
+.js .lazyloaded {
+  transition: opacity 1000ms;
+}
+.password-strength__meter {
+  background: var(--dark);
+}
+.field--name-body a {
+  font-weight: bold;
+}
 
 // Page header.
 .page-header {
@@ -23,6 +32,19 @@ p:last-child,
 .form-group:last-child,
 .panel:last-child {
   margin-bottom: 0;
+}
+
+//mobile-number
+.mobile-number-field {
+  .form-type-textfield {
+    input{
+      padding: 6px 12px;
+      border: 2px solid var(--primaryColor);
+      border-radius: 10px;
+      width: 250px;
+      height: 42px;
+    }
+  }
 }
 
 // Help region.
@@ -59,9 +81,28 @@ img {
   max-width: 100%;
   height: auto;
 }
+.breadcrumb {
+  background: var(--primaryLighter);
+  padding:  15px 20px;
+  margin: 10px 0 20px 0;
+  border-radius: 10px;
+  a {
+    color: var(--dark);
+  }
+}
 
 .field--name-list-price {
   text-decoration: line-through;
+}
+
+.region-content{
+  .block-title {
+    font-size: 20px;
+    padding: 15px 30px;
+    border-bottom: 2px var(--primaryColor) solid;
+    text-align: right;
+  }
+  
 }
 
 .swiper-button-prev, .swiper-button-next  {
@@ -85,11 +126,6 @@ img {
   transform: rotate(180deg);
 }
 
-@keyframes move-left-right {
-  0%{
-    transform: translateX(5px);
-  }
-  100%{
-    transform: translateX(0px);
-  }
+.col-xs-6 {
+  padding: 5px;
 }

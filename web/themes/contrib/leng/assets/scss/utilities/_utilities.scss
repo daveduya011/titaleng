@@ -125,3 +125,12 @@
     border-top: 2px solid rgba(white, 0.1);
   }
 }
+
+@keyframes move-left-right {
+  0%{
+    transform: translateX(5px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}

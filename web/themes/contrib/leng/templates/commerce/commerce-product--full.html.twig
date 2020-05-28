@@ -28,7 +28,6 @@
 ]
 %}
 <article{{ attributes.addClass(classes) }}>
-
   <div class="row">
     <div class="col-md-6">
       {{- product.field_images -}}
@@ -37,10 +36,27 @@
     <div class="col-md-6">
       <div class="commerce-product__contents">
         {{- product.title -}}
+        {{- product.field_rating -}}
         {{- product.variation_price -}}
         {{- product.variation_list_price -}}
-        {{- product|without('field_images','variation_attributes','variation_price','variation_list_price','variation_field_images') -}}
+        {{- product|without('field_images','variation_attributes','variation_price',
+        'variation_list_price','variation_field_images', 'field_rating', 'field_feedback') -}}
       </div>
     </div>
+  </div>
+  <div class="container feedbacks">
+    <h1>Product reviews</h1>
+    <div class="row">
+    {{- product.field_feedback[0]['comments'] -}}
+    </div>
+    {% if hasBought or is_admin %}
+      {{- product.field_feedback[0]['comment_form'] -}}
+      {% else %}
+      <div class="note">
+      {% if product.field_feedback[0]['comments'] == null %}
+      <h2><div>No reviews yet.</div></h2>
+      {% endif %}
+      You can submit reviews after your item has been delivered.</div>
+    {% endif %}
   </div>
 </article>

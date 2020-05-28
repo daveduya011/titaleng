@@ -2,6 +2,8 @@
   padding: 0;
   color: $brand-primary;
   text-align: center;
+  margin-top: 20px;
+
   @media screen and (min-width: $screen-md) {
     margin-bottom: 60px;
   }
@@ -65,5 +67,23 @@
 
     @extend .glyph:before;
     @extend .glyph-checked-rounded:before;
+  }
+}
+
+.checkout-pane-review {
+  .field {
+    margin: 10px 0px;
+  }
+}
+
+.checkout-pane-order-summary{
+  a {
+    color: var(--textColor);
+  }
+  table {
+    padding: 10px;
+    td {
+      padding: 10px;
+    }
   }
 }

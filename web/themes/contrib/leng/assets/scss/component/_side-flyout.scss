@@ -16,6 +16,12 @@
     z-index: $flyout-z-index;
     transition: transform $side-flyout-animation;
     transform: translateX(-100%);
+    @media screen and (max-width:$screen-sm){      
+      display: flex;
+      align-items: center;
+      /* font-weight: bold; */
+      justify-content: center;
+    }
     // when admin toolbar is opened
     .toolbar-horizontal &{
       top: 40px;
