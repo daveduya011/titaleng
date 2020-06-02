@@ -116,6 +116,7 @@
       margin: 20px 0;
       padding: 10px 40px;
       border: 2px solid var(--dark);
+      
       h1 {
         font-size: 19px;
         color: var(--textColor);
@@ -138,11 +139,15 @@
       }
       .js-comment {
         padding: 20px;
-        margin: 10px;
         min-height: 150px;
         background: #fff;
         border-radius: 10px;
         box-shadow: #ddd 0px 0px 10px;
+      }
+      .pager-nav {
+        position: absolute;
+        bottom: -60px;
+        right: 0;
       }
       .comment-form {
         padding: 20px;

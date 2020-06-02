@@ -58,3 +58,4 @@ libraries:
       libraries/swiper/swiper.min.css: {}
   js:
     libraries/swiper/swiper.min.js: {}
+    libraries/masonry/masonry.pkgd.min.js: {}

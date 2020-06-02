@@ -20,19 +20,35 @@
     justify-content: space-between;
     > nav{
       display: flex;
+      @media screen and (max-width: $screen-md){
+        overflow-y: hidden;
+        background: #fff1;
+        padding: 10px 10px;
+        border-right: 2px var(--primaryColor) solid;
+      }
+    }
+    @media screen and (max-width: $screen-md) {
+      flex-direction: column;
+      .toggle-btn {
+        display: block !important; 
+      }
     }
   }
   .menu-catalog {
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-self: center;
-    width: 100%;
+    
     .dropdown-toggle,
     > .menu__item > .menu__link {
       color: $gray-dark;
       text-transform: uppercase;
       white-space: nowrap;
       font-size: 18px;
+      @media screen and (max-width: $screen-md){
+        font-size: 15px;
+        color: var(--primaryLight);
+      }
       &:before{
         position: absolute;
         bottom: 0;
@@ -61,9 +77,6 @@
   // responsive overrides
   @media screen and (min-width: $screen-lg) {
     padding: 20px 0 20px 0;
-    .menu-catalog {
-      display: flex;
-    }
     
     .logo{
       margin-right: auto;

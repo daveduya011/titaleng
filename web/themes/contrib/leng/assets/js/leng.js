@@ -16,16 +16,7 @@
     }
   };
 
-  Drupal.behaviors.swiper = {
-    attach: function (context, settings) {
-      $('.cart-block--contents .close-btn').click(function() {
-        $(this).parent().removeClass('cart-block--contents__expanded');
-      });
-    }
-  };
-
-
-  var mySwiper = new Swiper('.swiper-container', { 
+  new Swiper('.swiper-container', { 
       // Optional parameters
     direction: 'horizontal',
     loop: true,
@@ -43,10 +34,23 @@
       prevEl: '.swiper-button-prev',
     },
     effect: 'slide',
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
   });
+
+
+  Drupal.behaviors.masonry = {
+    attach: function (context, settings) {
+      $('.grid').once().masonry({
+        // options
+        itemSelector: '.grid-item',
+        gutter: 15,
+        percentPosition: true,
+        horizontalOrder: true,
+      });
+    }
+  };
 
   })(jQuery);

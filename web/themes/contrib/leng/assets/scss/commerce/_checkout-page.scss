@@ -33,4 +33,10 @@
     #edit-actions-next {
         margin-top: 10px;
     }
+
+    .checkout-pane-completion-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

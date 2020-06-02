@@ -10,14 +10,9 @@
 
   @media screen and (max-width: $screen-lg) {
     display: flex;
-    align-items: center;
     justify-content: center;
-    max-width: 500px;
     padding: 0px 10px;
-  }
-  @media screen and (max-width: $screen-sm) {
     flex-direction: column;
-    margin: 0;
   }
 
 
@@ -27,6 +22,9 @@
     height: 200px;
     width: 100%;
     @media screen and (max-width: $screen-lg) {
+      height: 190px;
+    }
+    @media screen and (max-width: $screen-xs) {
       height: 150px;
     }
     img {
@@ -71,7 +69,7 @@
 
   &__info {
     position: relative;
-    padding: 10px 20px;
+    padding: 15px 20px;
     font-size: $font-size-h4;
     transition: all .4s ease;
     min-height: 90px;
@@ -105,13 +103,12 @@
 
     @media screen and (max-width: $screen-xs) {
       font-size: 14px;
-      margin: 0;
-      padding: 0;
+      padding-left: 5px;
       .field--name-price {
         font-size: 15px;
       }
       .field--name-list-price {
-        font-size: 13px;
+        font-size: 11px;
       }
     }
   }

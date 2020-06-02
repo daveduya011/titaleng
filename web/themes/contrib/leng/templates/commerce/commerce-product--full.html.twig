@@ -35,18 +35,20 @@
     </div>
     <div class="col-md-6">
       <div class="commerce-product__contents">
-        {{- product.title -}}
+        {# {{- product.title -}} #}
+        {{- product.variation_title -}}
         {{- product.field_rating -}}
         {{- product.variation_price -}}
         {{- product.variation_list_price -}}
         {{- product|without('field_images','variation_attributes','variation_price',
-        'variation_list_price','variation_field_images', 'field_rating', 'field_feedback') -}}
+        'variation_list_price','variation_field_images', 'field_rating', 'field_feedback',
+        'variation_title' ) -}}
       </div>
     </div>
   </div>
   <div class="container feedbacks">
     <h1>Product reviews</h1>
-    <div class="row">
+    <div class="grid">
     {{- product.field_feedback[0]['comments'] -}}
     </div>
     {% if hasBought or is_admin %}

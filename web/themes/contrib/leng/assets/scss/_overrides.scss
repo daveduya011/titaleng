@@ -121,11 +121,34 @@ img {
     animation: move-left-right 0.2s infinite alternate-reverse;
   }
 }
-
+.field--name-comment-body {
+  word-wrap: break-word;
+}
 .swiper-button-prev {
   transform: rotate(180deg);
 }
 
 .col-xs-6 {
   padding: 5px;
+}
+
+.grid-item {
+  width: 23%;
+  @media screen and (max-width: $screen-sm) {
+    width: 46%;
+  }
+}
+
+.grid-item--width2 {
+  width: 30%;
+  @media screen and (max-width: $screen-sm) {
+    width: 46%;
+  }
+}
+
+.grid-item {
+  margin-bottom: 10px;
+}
+.grid {
+  margin-left: 15px;
 }

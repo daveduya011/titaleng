@@ -1,7 +1,6 @@
 .cart-empty-page,
 .checkout-complete{
   font-size: 25px;
-  text-align: center;
   margin: 20px auto;
   font-weight: 300;
   max-width: 560px;
@@ -11,6 +10,7 @@
     margin-top: 20px;
     font-style: italic;;
   }
+  
 }
 
 .path-checkout .page-header,
@@ -54,5 +54,28 @@
   margin: 50px auto;
   .commerce-checkout-completion-register__text {
     margin-bottom: 20px;
+  }
+}
+
+.layout-order-form {
+  
+  background: var(--primaryLight);
+  .layout-region{
+    padding: 25px;
+  }
+}
+.layout-region-order-secondary {
+  background: var(--primaryColor);
+  padding: 10px 30px;
+  details {
+    margin: 20px 0;
+    background: var(--primaryLighter);
+    summary { 
+      background: var(--primaryLight);
+      padding: 15px;
+    }
+    .details-wrapper {
+      padding: 20px;
+    }
   }
 }

@@ -15,10 +15,12 @@
   
   /* Text color */
   body,
-  .region-header .menu-catalog .dropdown-toggle,
   .region-header .menu-catalog>.menu__item>.menu__link
   {
     color: var(--textColor)
+  }
+  .region-header .menu-catalog .dropdown-toggle {
+    color: var(--primaryLight)
   }
   .commerce-product--catalog__info .field--name-title a {
     color: var(--textColor);
