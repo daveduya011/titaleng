@@ -1,0 +1,32 @@
+leng_custom_fulfillment_processing:
+      id: leng_custom_fulfillment_processing
+      group: commerce_order
+      label: 'Fulfillment, with processing'
+      states:
+        draft:
+          label: Draft
+        processing:
+          label: Processing
+        fulfillment:
+          label: 'Pending Delivery'
+        completed:
+          label: Completed
+        canceled:
+          label: Canceled
+      transitions:
+        place:
+          label: 'Place order'
+          from: [draft]
+          to: processing
+        process:
+          label: 'Process order'
+          from: [processing]
+          to: fulfillment
+        fulfill:
+          label: 'Fulfill order'
+          from: [fulfillment]
+          to: completed
+        cancel:
+          label: 'Cancel order'
+          from: [draft, processing, fulfillment]
+          to: canceled

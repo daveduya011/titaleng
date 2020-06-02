@@ -1,0 +1,6 @@
+name: Leng Custom Module
+description: Leng Custom Module
+package: Custom
+type: module
+version: 1.0
+core: 8.x

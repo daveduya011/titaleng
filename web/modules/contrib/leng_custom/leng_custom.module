@@ -1,0 +1,118 @@
+<?php
+
+use Drupal\Core\Url;
+use Drupal\facets\FacetInterface;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
+use Drupal\commerce_order\Entity\Order;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ *
+ * Workaround for taxonomy_menu not supporting custom paths. See #2865894.
+ */
+function leng_custom_menu_links_discovered_alter(&$links) {
+  $alias_cleaner = \Drupal::service('pathauto.alias_cleaner');
+  $facet_storage = \Drupal::entityTypeManager()->getStorage('facets_facet');
+  $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  try {
+    $view_url = Url::fromRoute('view.product_catalog.page_1');
+    $view_url = $view_url->getInternalPath();
+  }
+  catch (RouteNotFoundException $e) {
+    // The catalog View may have been disabled or deleted.
+    return;
+  }
+
+  foreach ($links as &$link) {
+    $menu_name = isset($link['menu_name']) ? $link['menu_name'] : '';
+    if ($link['provider'] == 'taxonomy_menu' && $menu_name == 'catalog') {
+      // Generate the path to the view + facets.
+      // Assumes that the facet is named the same as the vocabulary.
+      $term = $term_storage->load($link['metadata']['taxonomy_term_id']);
+      $facet = $facet_storage->load($term->bundle());
+      if (!$facet instanceof FacetInterface) {
+        continue;
+      }
+
+      // It is possible for the facet to be NULL if it was deleted, in which
+      // case we only link to the view (which is better than nothing).
+      $link['url'] = 'internal:/' . $view_url;
+      if ($facet) {
+        $label = $alias_cleaner->cleanString($term->label());
+        $link['url'] .= '/' . $facet->getUrlAlias() . '/' . $label . '-' . $term->id();
+      }
+      $link['route_name'] = '';
+      $link['route_parameters'] = [];
+      $link['load arguments'] = [];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function leng_custom_preprocess_breadcrumb(&$variables) {
+  // The Bootstrap theme provides a feature that appends the current page title
+  // to the end of the breadcrumbs. On the catalog page this is awkward, as
+  // Facets already appends the facet source page title when a facet filter
+  // is active.
+  //
+  // This temporarily disables that setting, as module preprocess hooks will run
+  // before the theme's, without actually changing the theme setting.
+  if (class_exists('\Drupal\bootstrap\Plugin\Preprocess\Breadcrumb')) {
+    $current_route_match = \Drupal::routeMatch();
+    if ($current_route_match->getRouteName() == 'view.product_catalog.page_1') {
+      $theme = \Drupal\bootstrap\Bootstrap::getTheme();
+      $theme->setSetting('breadcrumb_title', FALSE);
+    }
+  }
+}
+
+function leng_custom_form_alter(&$form, FormStateInterface $form_state, $form_id)  {
+  if ($form_id=='comment_product_feedback_form') {
+    //add class body
+    $form['actions']['submit']['#value'] = t('Submit Feedback');
+  }
+  if ($form_id=='commerce_checkout_flow_multistep_default') {
+    if ($form['#step_id'] == "review") {
+      $form['actions']['next']['#value'] = t('Complete Purchase');
+    }
+    if ($form['#step_id'] == "complete") {
+      $form['completion_message']['cancel_order'] = array(
+        '#type' => 'submit',
+        '#value' => t('Cancel Order'),
+        '#submit' => ['leng_custom_cancel_order'],
+        '#limit_validation_errors' => array(),
+      );
+    }
+  }
+}
+function leng_custom_cancel_order(&$form, FormStateInterface $form_state) {
+  $order = $form['completion_message']['message']['#order_entity'];
+  
+  if (isset($order)) {
+    $user = \Drupal::currentUser()->id();
+    $order_state = $order->getState();
+    $order_state_transitions = $order_state->getTransitions();
+    
+    $order_state->applyTransition($order_state_transitions['cancel']);
+    $order->save();
+
+    //redirect
+    $url = Url::fromRoute('view.commerce_user_orders.order_page')
+    ->setRouteParameters(array('user'=>$user));;
+    $form_state->setRedirectUrl($url); return;
+  }
+}
+
+
+// function  mymodule_custom_taxonomy_term_update( Drupal\Core\Entity\EntityInterface $entity )
+// {
+//   //here hierarchy is the vocabulary name used with taxonomy menu
+//     if( "hierarchy" == $entity->bundle() ){
+//         \Drupal::service('router.builder')->rebuild();
+// }
+
+
+

@@ -1,0 +1,10 @@
+rules_order_bought:
+  label: 'User order has completed'
+  category: 'Commerce'
+  context:
+    user:
+      type: 'entity:user'
+      label: 'User who made the order'
+    product:
+      type: 'entity:commerce_product'
+      label: 'The product that has been ordered'

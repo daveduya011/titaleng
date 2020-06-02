@@ -1,0 +1,22 @@
+services:
+  leng_custom.subscriber: 
+    class: Drupal\leng_custom\EventSubscriber\RedirectRequestEventSubscriber
+    tags:
+      - { name: 'event_subscriber' }
+  leng_custom.workflow_event_subscriber:
+    class: Drupal\leng_custom\EventSubscriber\WorkflowTransitionEventSubscriber
+    arguments: ['@event_dispatcher']
+    tags:
+      - { name: 'event_subscriber' }
+  leng_custom.product_breadcrumb_builder:
+    class: Drupal\leng_custom\ProductBreadcrumbBuilder
+    arguments: ['@pathauto.alias_cleaner', '@entity_type.manager', '@router.route_provider']
+    tags:
+      - { name: breadcrumb_builder, priority: 1100 }
+
+  leng_custom.catalog_breadcrumb_builder:
+    class: Drupal\leng_custom\CatalogBreadcrumbBuilder
+    arguments: ['@request_stack', '@title_resolver', '@entity_type.manager']
+    tags:
+      # facets_pretty_path is set to 1500.
+      - { name: breadcrumb_builder, priority: 1501 }
