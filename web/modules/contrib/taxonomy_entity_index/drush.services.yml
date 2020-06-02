@@ -1,0 +1,6 @@
+services:
+ taxonomy_entity_index.commands:
+   class: Drupal\taxonomy_entity_index\Commands\TaxonomyEntityIndexCommands
+   tags:
+     - { name: drush.command }
+   arguments: ['@entity_type.manager', '@config.factory', '@logger.factory']

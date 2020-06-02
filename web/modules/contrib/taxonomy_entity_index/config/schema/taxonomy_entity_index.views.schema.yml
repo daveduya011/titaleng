@@ -1,0 +1,46 @@
+# Schema for the views plugins of the Taxonomy Entity Index module.
+
+views.argument.taxonomy_entity_index_tid_depth:
+  type: views_argument
+  label: 'Taxonomy term ID'
+  mapping:
+    depth:
+      type: integer
+      label: 'Depth'
+    break_phrase:
+      type: boolean
+      label: 'Allow multiple values'
+    use_taxonomy_term_path:
+      type: boolean
+      label: 'Use taxonomy term path'
+
+views.field.taxonomy_entity_index_tid:
+  type: views_field
+  label: 'Taxonomy language'
+  mapping:
+    type:
+      type: string
+      label: 'Display type'
+    separator:
+      type: string
+      label: 'Separator'
+    link_to_taxonomy:
+      type: boolean
+      label: 'Link this field to its term page'
+    limit:
+      type: boolean
+      label: 'Limit terms by vocabulary'
+    vids:
+      type: sequence
+      label: 'Vocabularies'
+      sequence:
+        type: string
+        label: 'Vocabulary'
+
+views.filter.taxonomy_entity_index_tid_depth:
+  type: views.filter.taxonomy_index_tid
+  label: 'Taxonomy term ID with depth'
+  mapping:
+    depth:
+      type: integer
+      label: 'Depth'
