@@ -26,10 +26,7 @@
     "config": {
         "bin-dir": "bin",
         "discard-changes": true,
-        "sort-packages": true,
-        "platform": {
-            "php": "7.0.8"
-        }
+        "sort-packages": true
     },
     "require": {
         "php": ">=7.0.8",
@@ -43,10 +40,12 @@
         "drupal/lazy": "3.2",
         "drupal/mail_login": "1.1",
         "drupal/mobile_number": "^1.0@alpha",
+        "drupal/search_api_solr": "^4.0",
         "drupal/select2": "^1.8",
         "drupalcommerce/demo_commerce": "dev-master",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^1.1",
+        "symfony/event-dispatcher": "4.3.11 as 3.4.35",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.0"
