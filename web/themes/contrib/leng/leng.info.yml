@@ -25,6 +25,10 @@ regions:
 libraries-override:
   # Replace an entire library.
   bootstrap/framework: leng/bootstrap-scripts
+  commerce_cart_flyout/flyout:
+    js:
+      js/views/CartBlock.js: assets/js/CartBlock.js
+  
 
 libraries:
   - 'leng/fonts'
