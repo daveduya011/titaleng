@@ -6,8 +6,12 @@
     font-size: 20px;
   }
   .checkout-pane-order-summary{
-    padding: 40px;
+    padding: 20px 20px 40px 20px;
     background-color: $brand-primary-100;
+
+    @media screen and (max-width: $screen-md) {
+      padding: 15px 15px 25px 15px;
+    }
   }
   //tables
   .table > tbody > tr > td{

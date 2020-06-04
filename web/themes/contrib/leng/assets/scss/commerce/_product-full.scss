@@ -15,6 +15,10 @@
     .field--name-price,
     .field--name-title{
       font-size: $font-size-h1;
+      @media screen and (max-width: $screen-md){
+        font-size: 30px;
+        margin-top: 20px;
+      }
     }
     // Color
     .field--name-variations{

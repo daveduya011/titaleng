@@ -81,6 +81,7 @@
   background-color: $brand-primary;
   @extend %inverted-color-section;
   +.auth-user-form--footer {
-    background-color: $brand-primary-100;
+    background-color: var(--header);
+    color: #fff;
   }
 }

@@ -244,7 +244,7 @@
         text-align: center;
         font-size: 0;
         display: block;
-        background: var(--primaryColor);
+        background: var(--primaryLighter);
         &:before {
           content: '';
           background: url(../icons/arrow-circle.svg) no-repeat;
@@ -259,11 +259,11 @@
   
           &:after {
             content: 'more';
-            font-size: 15px;
+            font-size: 12px;
             font-weight: bold;
             display: block;
             position: absolute;
-            left: 10px;
+            left: 16px;
           }
         }
       }

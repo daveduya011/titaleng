@@ -53,9 +53,7 @@
   .btn-white,
   form.user-pass,
   #user-pass,
-  #user-register-form,
   #user-pass .btn,
-  #user-register-form .btn,
   .btn-primary, .path-cart [id="edit-checkout"],
   .btn-default:hover, .path-cart :hover[id="edit-submit"],
   .line:after, .form-header:after, .page-header:after,
@@ -64,6 +62,20 @@
   .region-header .menu-catalog>.menu__item>.menu__link.is-active:before,
   [type="radio"]:checked+span+label:after, [type="radio"]:checked+label:after {
     background-color: var(--dark)
+  }
+  
+  #user-register-form {
+    background-color: var(--primaryColor);
+    color: var(--textColor);
+  }
+
+  #user-register-form .form-control {
+    background-color: #fff;
+  }
+  
+  #user-register-form .btn {
+    background-color: var(--textColor);
+    color: var(--primaryLighter);
   }
   .well-primary,
   .well-primary .btn-white,

@@ -21,14 +21,16 @@
 .form-wrapper__returning-customer {
   background: var(--primaryLight);
   #edit-login-returning-customer-forgot-password {
-    padding: 20px;
+    padding: 20px 0;
     font-weight: bold;
+    display: block;
   }
 }
 .form-wrapper__guest-checkout {
   background: var(--primaryLighter);
   button {
-    background: var(--dark);
+    background: var(--header);
+    color: #fff;
     border: none;
   }
 }

@@ -39,4 +39,12 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .checkout-pane-login {
+        .form-wrapper__login-option {
+            @media screen and (max-width:$screen-md) {
+                padding: 10px;
+            }
+        }
+    }
 }
