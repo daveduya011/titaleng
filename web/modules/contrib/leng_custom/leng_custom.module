@@ -30,6 +30,7 @@ function leng_custom_menu_links_discovered_alter(&$links) {
       // Generate the path to the view + facets.
       // Assumes that the facet is named the same as the vocabulary.
       $term = $term_storage->load($link['metadata']['taxonomy_term_id']);
+      $bundle = $term->bundle();
       $facet = $facet_storage->load($term->bundle());
       if (!$facet instanceof FacetInterface) {
         continue;

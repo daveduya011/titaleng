@@ -146,6 +146,17 @@ img {
   }
 }
 
+.grid-item--width3 {
+  width: 30%;
+  
+  @media screen and (max-width: $screen-md) {
+    width: 46%;
+  }
+  @media screen and (max-width: $screen-sm) {
+    width: 96%;
+  }
+}
+
 .grid-item {
   margin-bottom: 10px;
 }
