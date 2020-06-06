@@ -1,0 +1,21 @@
+uuid: df053e49-b141-4cd4-abcd-97bcb33ebc0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart_flyout
+  theme:
+    - leng
+id: cart
+theme: leng
+region: mobile_navigation
+weight: -11
+provider: null
+plugin: commerce_cart
+settings:
+  id: commerce_cart
+  label: Cart
+  provider: commerce_cart_flyout
+  label_display: '0'
+  use_quantity_count: 0
+visibility: {  }

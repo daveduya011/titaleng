@@ -1,0 +1,29 @@
+uuid: 9b1ff065-342c-4729-b719-b47967d91ded
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.per_kilo
+    - field.storage.commerce_product.field_tags
+    - taxonomy.vocabulary.tags
+id: commerce_product.per_kilo.field_tags
+field_name: field_tags
+entity_type: commerce_product
+bundle: per_kilo
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

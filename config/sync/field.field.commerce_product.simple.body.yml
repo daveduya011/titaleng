@@ -1,0 +1,25 @@
+uuid: e67e6211-1321-43fa-b50b-0e7410d60417
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.simple
+    - field.storage.commerce_product.body
+  module:
+    - text
+_core:
+  default_config_hash: bOeCQcwwZaMEh2ouT-GpCOcPV6TC6iDc8fC8RqmHpBg
+id: commerce_product.simple.body
+field_name: body
+entity_type: commerce_product
+bundle: simple
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

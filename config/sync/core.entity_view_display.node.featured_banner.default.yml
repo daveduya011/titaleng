@@ -1,0 +1,32 @@
+uuid: 4148444f-fbfd-462c-935c-187cfb66adfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.featured_banner.field_paragraph
+    - node.type.featured_banner
+  module:
+    - entity_reference_revisions
+    - user
+id: node.featured_banner.default
+targetEntityType: node
+bundle: featured_banner
+mode: default
+content:
+  field_paragraph:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

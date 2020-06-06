@@ -1,0 +1,24 @@
+uuid: f7bbb629-b7b7-456b-baa6-9c4c9aafea05
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_attribute.kilos
+    - commerce_product.commerce_product_variation_type.per_kilo
+    - field.storage.commerce_product_variation.attribute_kilos
+id: commerce_product_variation.per_kilo.attribute_kilos
+field_name: attribute_kilos
+entity_type: commerce_product_variation
+bundle: per_kilo
+label: Kilos
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product_attribute_value'
+  handler_settings:
+    target_bundles:
+      - kilos
+field_type: entity_reference

@@ -1,0 +1,42 @@
+uuid: 8a03a2ed-9000-4629-ada0-e6412ec23d6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.full_image_width_with_feature.field_banner
+    - field.field.paragraph.full_image_width_with_feature.field_feature
+    - paragraphs.paragraphs_type.full_image_width_with_feature
+  module:
+    - paragraphs
+id: paragraph.full_image_width_with_feature.default
+targetEntityType: paragraph
+bundle: full_image_width_with_feature
+mode: default
+content:
+  field_banner:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_feature:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

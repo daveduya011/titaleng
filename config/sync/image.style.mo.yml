@@ -1,0 +1,15 @@
+uuid: e9bb8ce7-84f9-4ae7-bce4-9b3bd03c3539
+langcode: en
+status: true
+dependencies: {  }
+name: mo
+label: 'Mobile Cropped'
+effects:
+  2b4615e6-83cd-4f89-b9b6-0e1b4eeeb517:
+    uuid: 2b4615e6-83cd-4f89-b9b6-0e1b4eeeb517
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 600
+      anchor: right-center

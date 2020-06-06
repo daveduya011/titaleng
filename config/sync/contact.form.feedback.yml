@@ -1,0 +1,14 @@
+uuid: 28a2476b-8de9-4956-8cb8-503788ce77c3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: c4zaT5cyPxuTXI6JOWt3qRtMvICT9tHB6d9a5VG-CmQ
+id: feedback
+label: 'Website feedback'
+recipients:
+  - dave.duya@gmail.com
+reply: ''
+weight: 0
+message: null
+redirect: null

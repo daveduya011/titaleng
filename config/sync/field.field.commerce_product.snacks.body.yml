@@ -1,0 +1,25 @@
+uuid: a70f2cbe-102c-4ea1-b1bc-4f7e0ae547fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.snacks
+    - field.storage.commerce_product.body
+  module:
+    - text
+_core:
+  default_config_hash: bOeCQcwwZaMEh2ouT-GpCOcPV6TC6iDc8fC8RqmHpBg
+id: commerce_product.snacks.body
+field_name: body
+entity_type: commerce_product
+bundle: snacks
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

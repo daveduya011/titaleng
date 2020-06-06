@@ -1,0 +1,10 @@
+uuid: 3a88b59f-2272-48d7-a427-544c6d9f50dd
+langcode: en
+status: true
+dependencies: {  }
+id: per_kilo
+label: 'Per Kilo'
+orderItemType: physical_product_variation
+generateTitle: true
+traits: {  }
+locked: false

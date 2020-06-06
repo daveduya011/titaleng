@@ -1,0 +1,10 @@
+uuid: 67b8376d-5c25-4c79-b8fc-655fd9cc1098
+langcode: en
+status: true
+dependencies: {  }
+id: per_pieces
+label: 'Per Pieces'
+orderItemType: physical_product_variation
+generateTitle: true
+traits: {  }
+locked: false

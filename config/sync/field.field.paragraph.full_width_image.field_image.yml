@@ -1,0 +1,21 @@
+uuid: 156b9905-60ce-42f0-ae6b-dd944cf83f18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - paragraphs.paragraphs_type.full_width_image
+id: paragraph.full_width_image.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: full_width_image
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings: {  }
+field_type: entity_reference

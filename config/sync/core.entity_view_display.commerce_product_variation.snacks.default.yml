@@ -1,0 +1,63 @@
+uuid: 4f9afd40-92cc-4a4c-8732-d51a54fc8d35
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.snacks
+    - field.field.commerce_product_variation.snacks.attribute_flavor
+    - field.field.commerce_product_variation.snacks.attribute_ounce
+    - field.field.commerce_product_variation.snacks.field_images
+    - image.style.product_full
+  module:
+    - commerce_price
+    - lazy
+    - media
+id: commerce_product_variation.snacks.default
+targetEntityType: commerce_product_variation
+bundle: snacks
+mode: default
+content:
+  field_images:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
+    settings:
+      image_style: product_full
+      image_link: ''
+    third_party_settings:
+      lazy:
+        lazy_image: '0'
+    region: content
+  list_price:
+    label: hidden
+    type: commerce_price_default
+    weight: 2
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+  price:
+    label: hidden
+    type: commerce_price_default
+    weight: 1
+    region: content
+    settings:
+      currency_display: symbol
+      strip_trailing_zeroes: false
+    third_party_settings: {  }
+  title:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  attribute_flavor: true
+  attribute_ounce: true
+  langcode: true
+  product_id: true
+  search_api_excerpt: true
+  sku: true

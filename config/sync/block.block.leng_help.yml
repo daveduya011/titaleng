@@ -1,0 +1,22 @@
+uuid: 97dd5325-8c37-473f-9270-999fc6deaef2
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - leng
+_core:
+  default_config_hash: gKtOcSQTQki2pujw1HB5crJu7WlQmuPbl9cMqPDeWtA
+id: leng_help
+theme: leng
+region: content
+weight: -10
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

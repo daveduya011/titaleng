@@ -1,0 +1,10 @@
+uuid: 347dfa1f-7eae-4c87-997d-e1c9a9891b5a
+langcode: en
+status: true
+dependencies: {  }
+id: per_liter
+label: 'Per Liter'
+orderItemType: physical_product_variation
+generateTitle: true
+traits: {  }
+locked: false

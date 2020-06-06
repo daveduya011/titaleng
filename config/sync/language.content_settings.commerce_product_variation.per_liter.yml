@@ -1,0 +1,11 @@
+uuid: e1cc0a3e-7588-4d05-ba53-4ce5b2fcb1ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.per_liter
+id: commerce_product_variation.per_liter
+target_entity_type_id: commerce_product_variation
+target_bundle: per_liter
+default_langcode: site_default
+language_alterable: false

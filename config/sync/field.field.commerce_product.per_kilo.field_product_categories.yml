@@ -1,0 +1,31 @@
+uuid: b2c12a3c-4217-4cbe-a24e-7d672750b568
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.per_kilo
+    - field.storage.commerce_product.field_product_categories
+    - taxonomy.vocabulary.product_categories
+_core:
+  default_config_hash: aoD4_I-2WfBIppOFJwB_DVSYFbHKzvIkDv_KgdLHRwE
+id: commerce_product.per_kilo.field_product_categories
+field_name: field_product_categories
+entity_type: commerce_product
+bundle: per_kilo
+label: Categories
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_categories: product_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

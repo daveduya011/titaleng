@@ -1,0 +1,7 @@
+uuid: c8d0ccd4-d886-49cc-b1ee-5abcea711274
+langcode: en
+status: true
+dependencies: {  }
+id: flavor
+label: Flavor
+elementType: radios

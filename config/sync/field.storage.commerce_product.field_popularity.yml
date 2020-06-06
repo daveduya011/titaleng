@@ -1,0 +1,23 @@
+uuid: 08e0b48a-e4e6-4030-8db6-cbad81841bb3
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - radioactivity
+id: commerce_product.field_popularity
+field_name: field_popularity
+entity_type: commerce_product
+type: radioactivity
+settings:
+  profile: decay
+  granularity: 900
+  halflife: 86400
+  cutoff: !!float 1
+module: radioactivity
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

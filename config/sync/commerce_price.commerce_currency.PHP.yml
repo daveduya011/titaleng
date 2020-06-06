@@ -1,0 +1,9 @@
+uuid: 9d9936d6-3a0b-4edd-ba3c-924458c52402
+langcode: en
+status: true
+dependencies: {  }
+currencyCode: PHP
+name: 'Philippine Piso'
+numericCode: '608'
+symbol: PHP
+fractionDigits: 2

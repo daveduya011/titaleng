@@ -1,0 +1,20 @@
+uuid: 37c53d0c-3d3d-4d0c-a36d-b5898d1c7087
+langcode: en
+status: true
+dependencies: {  }
+id: product_admin
+label: 'Product Admin'
+weight: 3
+is_admin: null
+permissions:
+  - 'access commerce administration pages'
+  - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'administer commerce_product'
+  - 'administer commerce_store'
+  - 'create media'
+  - 'delete any media'
+  - 'update any media'
+  - 'view all media revisions'
+  - 'view media'
+  - 'view the administration theme'

@@ -1,0 +1,21 @@
+uuid: 9788f489-3423-4bf5-8527-ecb30e5781e6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: GSl6UVqPYA2on9jQJpHPyNA7yKnLRfoC3fZRyjytCtA
+id: cash_on_delivery
+label: 'Cash on delivery'
+weight: null
+plugin: manual
+configuration:
+  instructions:
+    value: 'Delivery is between 0-2 business days. We will reach you through your phone number when your order is out for delivery.'
+    format: plain_text
+  display_label: 'Cash on delivery'
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+conditions: {  }
+conditionOperator: AND

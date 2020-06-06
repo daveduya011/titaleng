@@ -1,0 +1,23 @@
+uuid: bf5a9352-d48f-43ec-bfcd-5e3b6e511c2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.product_catalog
+  module:
+    - views
+  theme:
+    - leng
+id: exposedformproduct_catalogpage_2
+theme: leng
+region: top_navigation
+weight: -12
+provider: null
+plugin: 'views_exposed_filter_block:product_catalog-page_2'
+settings:
+  id: 'views_exposed_filter_block:product_catalog-page_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility: {  }

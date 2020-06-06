@@ -1,0 +1,14 @@
+uuid: 89847d43-d60f-4fba-bffe-35b521315d33
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mvzYmfwxSyvKB7c8oPntH7tTMzMwbxUaZAwQvvurDIg
+id: per_liter
+label: 'Per Liter'
+description: ''
+variationType: per_liter
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

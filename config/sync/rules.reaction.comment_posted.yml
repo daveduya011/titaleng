@@ -1,0 +1,38 @@
+uuid: 292805a6-c250-490d-b8f7-d2b80e043993
+langcode: en
+status: true
+dependencies: {  }
+id: comment_posted
+label: 'Comment Posted'
+events:
+  -
+    event_name: 'rules_entity_insert:comment'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: 0b0f070c-a644-42cb-93d0-aac277a213ad
+  conditions:
+    id: rules_and
+    uuid: 01c00aa8-ec3f-482f-bb84-73c2c47e5db3
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: f45e57ba-2a4b-4e55-b6a6-e2fcb7679b28
+    actions:
+      -
+        id: rules_action
+        uuid: ebf439ca-3e55-46d3-b173-c5d1c14325e0
+        context_values:
+          flag_id: bought
+          flag_value: 'false'
+        context_mapping:
+          user: '@user.current_user_context:current_user'
+        context_processors:
+          flag_id:
+            rules_tokens: {  }
+          flag_value:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        action_id: rules_leng_custom_set_flag_product

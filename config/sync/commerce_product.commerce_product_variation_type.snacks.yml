@@ -1,0 +1,10 @@
+uuid: d430eb8b-1963-4e44-88fd-f41b985466f5
+langcode: en
+status: true
+dependencies: {  }
+id: snacks
+label: Snacks
+orderItemType: physical_product_variation
+generateTitle: true
+traits: {  }
+locked: false

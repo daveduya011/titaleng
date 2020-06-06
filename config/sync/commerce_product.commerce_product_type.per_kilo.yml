@@ -1,0 +1,14 @@
+uuid: e99f81c9-7c58-4632-bed5-975f9b58a6c9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mvzYmfwxSyvKB7c8oPntH7tTMzMwbxUaZAwQvvurDIg
+id: per_kilo
+label: 'Per Kilo'
+description: 'Simple products that measured per kilo'
+variationType: per_kilo
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

@@ -1,0 +1,20 @@
+uuid: d830dc5a-a4e2-4cca-a0ea-cdadca579601
+langcode: en
+status: true
+dependencies:
+  theme:
+    - leng
+_core:
+  default_config_hash: EAlCAHiVy5x3aTOW2K9XaWE4kelyfSSSKv8_uiomGJM
+id: leng_local_actions
+theme: leng
+region: content
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

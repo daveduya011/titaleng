@@ -1,0 +1,26 @@
+uuid: f4ffb0bf-eefb-4875-be10-7ed87951ff73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_mobile_number
+    - profile.type.customer
+  module:
+    - mobile_number
+id: profile.customer.field_mobile_number
+field_name: field_mobile_number
+entity_type: profile
+bundle: customer
+label: 'Mobile Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  countries:
+    PH: PH
+    US: US
+  verify: none
+  message: "Your verification code from !site_name:\n!code"
+field_type: mobile_number

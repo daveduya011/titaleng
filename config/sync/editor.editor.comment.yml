@@ -1,0 +1,51 @@
+uuid: a321d127-1ac3-41aa-8ccf-474d1b679164
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.comment
+  module:
+    - ckeditor
+format: comment
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - BulletedList
+        -
+          name: Undo
+          items:
+            - Undo
+            - Redo
+        -
+          name: 'Copy Paste'
+          items:
+            - Copy
+            - PasteText
+            - Cut
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+    wordcount:
+      enable: 1
+      show_paragraphs: 0
+      show_word_count: 0
+      show_char_count: 1
+      count_spaces: 1
+      count_html: 0
+      max_words: '-1'
+      max_chars: '280'
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

@@ -1,0 +1,15 @@
+uuid: 1e2c29f9-5140-4f79-ae4f-82299a33ca7f
+langcode: en
+status: true
+dependencies: {  }
+name: product_full
+label: 'Product Full'
+effects:
+  320c6c0a-ae0e-484a-a20e-5997ded7d3b8:
+    uuid: 320c6c0a-ae0e-484a-a20e-5997ded7d3b8
+    id: image_scale
+    weight: 1
+    data:
+      width: 1000
+      height: 1000
+      upscale: false

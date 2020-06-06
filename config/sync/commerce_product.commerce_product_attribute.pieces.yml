@@ -1,0 +1,7 @@
+uuid: b49abb11-4ed6-495c-be25-155d174f86ff
+langcode: en
+status: true
+dependencies: {  }
+id: pieces
+label: Pieces
+elementType: radios

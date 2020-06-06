@@ -1,0 +1,11 @@
+uuid: ea80173d-89db-4255-82c4-7a272e9943c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.clothing
+id: commerce_product_variation.clothing
+target_entity_type_id: commerce_product_variation
+target_bundle: clothing
+default_langcode: site_default
+language_alterable: false

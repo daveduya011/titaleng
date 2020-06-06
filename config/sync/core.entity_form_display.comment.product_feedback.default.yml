@@ -1,0 +1,48 @@
+uuid: 8da1be2b-fa92-468d-b0e9-aaaa0cc40634
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.product_feedback
+    - field.field.comment.product_feedback.comment_body
+    - field.field.comment.product_feedback.field_rating
+  module:
+    - allowed_formats
+    - fivestar
+    - text
+id: comment.product_feedback.default
+targetEntityType: comment
+bundle: product_feedback
+mode: default
+content:
+  author:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  comment_body:
+    type: text_textarea
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: 'Say something about the product'
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+    region: content
+  field_rating:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: fivestar_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  subject: true

@@ -1,0 +1,14 @@
+uuid: 4cb92ae6-04e5-4f09-aeaf-e8b63b15d0fb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mvzYmfwxSyvKB7c8oPntH7tTMzMwbxUaZAwQvvurDIg
+id: per_pieces
+label: 'Per Pieces'
+description: 'Products measured in pieces'
+variationType: per_pieces
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

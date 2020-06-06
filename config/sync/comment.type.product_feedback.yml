@@ -1,0 +1,8 @@
+uuid: 6585aa58-173f-4da1-87fe-28bd603121b2
+langcode: en
+status: true
+dependencies: {  }
+id: product_feedback
+label: 'Product Feedback'
+target_entity_type_id: commerce_product
+description: ''

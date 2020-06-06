@@ -1,0 +1,7 @@
+uuid: 849a7a3f-f8c9-467a-90d8-33844cec3f08
+langcode: en
+status: true
+dependencies: {  }
+name: banner
+label: Banner
+effects: {  }

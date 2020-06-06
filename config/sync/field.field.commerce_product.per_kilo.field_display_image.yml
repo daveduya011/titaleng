@@ -1,0 +1,28 @@
+uuid: bd6a8cad-00d2-46d3-bd0b-b8840bd9c361
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.per_kilo
+    - field.storage.commerce_product.field_display_image
+    - media.type.image
+id: commerce_product.per_kilo.field_display_image
+field_name: field_display_image
+entity_type: commerce_product
+bundle: per_kilo
+label: 'Display Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

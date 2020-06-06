@@ -1,0 +1,23 @@
+uuid: 22795146-9ffa-408d-bd45-e1f22d684854
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.paragraph_page
+  module:
+    - text
+id: node.paragraph_page.body
+field_name: body
+entity_type: node
+bundle: paragraph_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,38 @@
+uuid: 54cde442-e5d2-4775-9ea2-9edb1274ef27
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.product_feedback
+    - field.field.comment.product_feedback.comment_body
+    - field.field.comment.product_feedback.field_rating
+  module:
+    - fivestar
+    - text
+id: comment.product_feedback.default
+targetEntityType: comment
+bundle: product_feedback
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_trimmed
+    weight: 1
+    settings:
+      trim_length: 280
+    third_party_settings: {  }
+    region: content
+  field_rating:
+    weight: 0
+    label: hidden
+    settings:
+      fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+      display_format: average
+      text_format: none
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true

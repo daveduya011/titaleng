@@ -1,0 +1,19 @@
+uuid: 6bd4c690-e0fe-45bf-ac99-ec5ff8d3671b
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.banner
+    - image.style.mo
+  theme:
+    - bootstrap
+id: banner_responsive
+label: 'Banner Responsive'
+image_style_mappings:
+  -
+    breakpoint_id: bootstrap.screen-sm-max
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: mo
+breakpoint_group: bootstrap
+fallback_image_style: banner

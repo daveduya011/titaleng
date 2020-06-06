@@ -1,0 +1,21 @@
+uuid: 731fa4a4-9dda-45a8-98a1-a5822aa0b90d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.feature_with_icon
+  module:
+    - text
+id: paragraph.feature_with_icon.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: feature_with_icon
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

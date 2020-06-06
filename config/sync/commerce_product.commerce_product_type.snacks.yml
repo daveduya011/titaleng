@@ -1,0 +1,14 @@
+uuid: a6669831-3f85-4da7-a5eb-f43585588ed6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mvzYmfwxSyvKB7c8oPntH7tTMzMwbxUaZAwQvvurDIg
+id: snacks
+label: Snacks
+description: ''
+variationType: snacks
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

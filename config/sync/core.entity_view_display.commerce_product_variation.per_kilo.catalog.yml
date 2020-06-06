@@ -1,0 +1,42 @@
+uuid: fcd204d0-03f3-4dec-b208-43578684d56c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.per_kilo
+    - core.entity_view_mode.commerce_product_variation.catalog
+    - field.field.commerce_product_variation.per_kilo.attribute_kilos
+    - field.field.commerce_product_variation.per_kilo.field_images
+  module:
+    - commerce_price
+id: commerce_product_variation.per_kilo.catalog
+targetEntityType: commerce_product_variation
+bundle: per_kilo
+mode: catalog
+content:
+  list_price:
+    label: hidden
+    type: commerce_price_default
+    weight: 1
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+  price:
+    label: hidden
+    type: commerce_price_default
+    weight: 0
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+hidden:
+  attribute_kilos: true
+  field_images: true
+  langcode: true
+  product_id: true
+  search_api_excerpt: true
+  sku: true
+  title: true

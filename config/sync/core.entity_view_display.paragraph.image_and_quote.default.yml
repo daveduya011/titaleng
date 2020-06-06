@@ -1,0 +1,33 @@
+uuid: 712f17bb-64cf-451b-bbc5-c3049a888c7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_and_quote.field_body
+    - field.field.paragraph.image_and_quote.field_icon
+    - paragraphs.paragraphs_type.image_and_quote
+  module:
+    - text
+id: paragraph.image_and_quote.default
+targetEntityType: paragraph
+bundle: image_and_quote
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_icon:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

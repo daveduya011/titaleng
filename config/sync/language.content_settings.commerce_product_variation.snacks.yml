@@ -1,0 +1,11 @@
+uuid: 946a51cd-ad55-4b26-a187-d75422b684d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.snacks
+id: commerce_product_variation.snacks
+target_entity_type_id: commerce_product_variation
+target_bundle: snacks
+default_langcode: site_default
+language_alterable: false

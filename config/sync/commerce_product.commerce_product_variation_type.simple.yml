@@ -1,0 +1,10 @@
+uuid: dc9a82cf-9d29-497e-88f8-219d9842fd35
+langcode: en
+status: true
+dependencies: {  }
+id: simple
+label: Simple
+orderItemType: physical_product_variation
+generateTitle: true
+traits: {  }
+locked: false

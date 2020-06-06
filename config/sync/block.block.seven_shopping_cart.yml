@@ -1,0 +1,23 @@
+uuid: e20610e5-3d98-4084-bd6d-2f38c096ffad
+langcode: en
+status: false
+dependencies:
+  module:
+    - commerce_cart_flyout
+  theme:
+    - seven
+id: seven_shopping_cart
+theme: seven
+region: header
+weight: -5
+provider: null
+plugin: commerce_cart
+settings:
+  id: commerce_cart
+  label: 'Shopping Cart'
+  provider: commerce_cart
+  label_display: '0'
+  use_quantity_count: false
+  dropdown: true
+  item_text: items
+visibility: {  }

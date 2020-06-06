@@ -1,0 +1,23 @@
+uuid: dfdd0006-f0be-4647-9b8c-a91e004f71df
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access checkout'
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'manage own commerce_payment_method'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'use text format comment'
+  - 'view commerce_product'
+  - 'view media'
+  - 'view own commerce_order'

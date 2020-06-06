@@ -1,0 +1,34 @@
+uuid: d561230d-1f11-4c82-a22f-2ad71b034a03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.full_width_image.field_image
+    - field.field.paragraph.full_width_image.field_link
+    - paragraphs.paragraphs_type.full_width_image
+  module:
+    - link
+    - media_library
+id: paragraph.full_width_image.default
+targetEntityType: paragraph
+bundle: full_width_image
+mode: default
+content:
+  field_image:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

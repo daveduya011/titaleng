@@ -1,0 +1,11 @@
+uuid: fec732f8-43fb-455d-a4d7-10e69118dd63
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.per_kilo
+id: commerce_product_variation.per_kilo
+target_entity_type_id: commerce_product_variation
+target_bundle: per_kilo
+default_langcode: site_default
+language_alterable: false

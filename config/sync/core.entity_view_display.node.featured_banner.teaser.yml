@@ -1,0 +1,24 @@
+uuid: 1b6c8e7a-b221-4ae9-a0eb-69125d913ff4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.featured_banner.field_paragraph
+    - node.type.featured_banner
+  module:
+    - user
+id: node.featured_banner.teaser
+targetEntityType: node
+bundle: featured_banner
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_paragraph: true
+  langcode: true
+  search_api_excerpt: true

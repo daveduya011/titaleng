@@ -1,0 +1,14 @@
+uuid: 75ed3ac6-d3af-4731-bf8c-59996439a89e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mvzYmfwxSyvKB7c8oPntH7tTMzMwbxUaZAwQvvurDIg
+id: simple
+label: Simple
+description: 'Simple products that doesn''t need any attributes'
+variationType: simple
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

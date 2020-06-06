@@ -1,0 +1,28 @@
+uuid: a3970aa5-55fa-4e84-9f1e-e57f2d24ef29
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.snacks
+    - field.storage.commerce_product.field_display_image
+    - media.type.image
+id: commerce_product.snacks.field_display_image
+field_name: field_display_image
+entity_type: commerce_product
+bundle: snacks
+label: 'Display Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

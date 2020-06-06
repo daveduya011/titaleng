@@ -1,0 +1,22 @@
+uuid: a0107cc1-8af1-4ac0-ab07-7d8fea31536c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - leng
+_core:
+  default_config_hash: rmiFUWInr28Z1v9rk-oycl_G9hlS7PzBvKbih2qIEuM
+id: leng_local_tasks
+theme: leng
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

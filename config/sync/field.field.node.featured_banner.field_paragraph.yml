@@ -1,0 +1,25 @@
+uuid: f836c235-796e-4ff7-a14f-796dce71f1f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph
+    - node.type.featured_banner
+  module:
+    - entity_reference_revisions
+id: node.featured_banner.field_paragraph
+field_name: field_paragraph
+entity_type: node
+bundle: featured_banner
+label: Paragraph
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 1
+    target_bundles: null
+field_type: entity_reference_revisions

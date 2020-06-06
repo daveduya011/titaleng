@@ -1,0 +1,32 @@
+uuid: 782fa41d-c313-4417-ac2d-1bc2cafbd3e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.product_feedback
+    - field.storage.comment.field_rating
+  module:
+    - fivestar
+id: comment.product_feedback.field_rating
+field_name: field_rating
+entity_type: comment
+bundle: product_feedback
+label: Rating
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    rating: '100'
+    target: null
+default_value_callback: ''
+settings:
+  stars: '5'
+  allow_clear: 0
+  allow_revote: 1
+  allow_ownvote: 1
+  rated_while: editing
+  enable_voting_target: 1
+  target_bridge_field: entity_id
+  target_fivestar_field: field_rating
+field_type: fivestar

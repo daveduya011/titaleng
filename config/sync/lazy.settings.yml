@@ -1,0 +1,43 @@
+image_fields:
+  media--image--field_media_image--default: '1'
+  media--banner--field_media_image_1--default: '1'
+  commerce_product_variation--fruits_per_kilo--field_images--catalog: '1'
+  commerce_product_variation--fruits_per_kilo--field_images--default: '1'
+  commerce_product_variation--fruits_per_kilo--field_images--summary: '1'
+  commerce_product_variation--fruits_per_pieces--field_images--default: '1'
+  commerce_product--fruits_per_kilo--field_display_image--catalog: '1'
+  commerce_product--fruits_per_pieces--field_display_image--catalog: '1'
+  commerce_product--simple--field_display_image--catalog: '1'
+  commerce_product--per_liter--field_display_image--catalog: '1'
+alter_tag:
+  img: img
+  iframe: '0'
+formatters:
+  lazy_image: lazy_image
+  lazy_responsive_image: lazy_responsive_image
+skipClass: no-lazy
+disabled_paths: /rss.xml
+placeholderSrc: ''
+preferNative: false
+lazysizes:
+  lazyClass: lazyload
+  loadedClass: lazyloaded
+  loadingClass: lazyloading
+  preloadClass: lazypreload
+  errorClass: lazyerror
+  autosizesClass: lazyautosizes
+  srcAttr: data-src
+  srcsetAttr: data-srcset
+  sizesAttr: data-sizes
+  minSize: 40
+  customMedia: {  }
+  init: true
+  expFactor: 1.5
+  hFac: 0.8
+  loadMode: 2
+  loadHidden: true
+  ricTimeout: 0
+  throttleDelay: 125
+  plugins: {  }
+_core:
+  default_config_hash: 65B0Oqm7J1SlKHPfAS8aUQJjyWxy1FhLOjmTwCf3_EQ

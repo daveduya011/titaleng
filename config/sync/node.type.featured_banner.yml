@@ -1,0 +1,17 @@
+uuid: 793058f5-2cef-43b9-a43f-5438869e6095
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Featured Banner'
+type: featured_banner
+description: 'Add featured banner on front page'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
