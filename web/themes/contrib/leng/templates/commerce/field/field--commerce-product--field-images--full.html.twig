@@ -52,7 +52,6 @@
   label_display == 'visually_hidden' ? 'sr-only',
 ]
 %}
-
 <div{{ attributes.addClass(classes) }}>
   {% if not label_hidden %}
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
@@ -60,8 +59,7 @@
 
 
   {% for item in items %}
-
-    {% set image_url = file_url(item.content['#item'].entity.uri.value) %}
+    {% set image_url = file_url(item.content['#item'].entity.uri.value | image_style('product_full')) %}
     {% set style = "background-image:url("~ image_url ~")" %}
 
     {% if loop.first %}
@@ -83,4 +81,3 @@
 
   {% endfor %}
 </div>
-
