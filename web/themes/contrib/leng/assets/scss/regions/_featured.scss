@@ -6,6 +6,9 @@
     .swiper-container {
         overflow: initial;
     }
+    .swiper-slide {
+        overflow: hidden;
+    }
 }
 .view-featured-banner {
     .field-content {
@@ -157,15 +160,9 @@
 
 .paragraph--type--full-width-image {
     
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-
     img {
-        width: 100% !important;
-        height: auto !important;
+        height: 100%;
+        max-width: initial;
     }
 
     .field--name-field-link {
