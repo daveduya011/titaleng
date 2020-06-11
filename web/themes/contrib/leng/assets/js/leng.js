@@ -34,10 +34,10 @@
       prevEl: '.swiper-button-prev',
     },
     effect: 'slide',
-    // autoplay: {
-    //   delay: 4000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
   });
 
 
