@@ -163,3 +163,23 @@ img {
 .grid {
   margin-left: 15px;
 }
+
+.btn-block {
+  text-align: center;
+  margin: 5px 20px 20px 20px;
+
+  a {
+    display: block;
+    padding: 15px;
+    color: var(--dark);
+    background: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 3px var(--primaryColor) solid;
+
+    &:hover {
+      color: #fff;
+      background: var(--dark);
+    }
+  }
+}
