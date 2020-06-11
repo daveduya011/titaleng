@@ -79,13 +79,16 @@ function leng_custom_form_alter(&$form, FormStateInterface $form_state, $form_id
     if ($form['#step_id'] == "review") {
       $form['actions']['next']['#value'] = t('Complete Purchase');
     }
-    if ($form['#step_id'] == "complete") {
-      $form['completion_message']['cancel_order'] = array(
-        '#type' => 'submit',
-        '#value' => t('Cancel Order'),
-        '#submit' => ['leng_custom_cancel_order'],
-        '#limit_validation_errors' => array(),
-      );
+    // if not anonymous
+    if (\Drupal::currentUser()->isAnonymous() == false) {
+      if ($form['#step_id'] == "complete") {
+        $form['completion_message']['cancel_order'] = array(
+          '#type' => 'submit',
+          '#value' => t('Cancel Order'),
+          '#submit' => ['leng_custom_cancel_order'],
+          '#limit_validation_errors' => array(),
+        );
+      }
     }
   }
 }
